@@ -1,0 +1,4 @@
+adaptive=io.github.chenyilei2016.extension.spi.compiler.support.AdaptiveCompiler
+jdk=io.github.chenyilei2016.extension.spi.compiler.support.JdkCompiler
+javassist=io.github.chenyilei2016.extension.spi.compiler.support.JavassistCompiler
+byteBuddy=io.github.chenyilei2016.extension.spi.compiler.support.ByteBuddyCompiler

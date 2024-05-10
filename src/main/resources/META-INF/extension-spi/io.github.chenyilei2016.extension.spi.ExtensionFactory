@@ -1,0 +1,3 @@
+adaptive=io.github.chenyilei2016.extension.spi.factory.AdaptiveExtensionFactory
+spi=io.github.chenyilei2016.extension.spi.factory.SpiExtensionFactory
+spring=io.github.chenyilei2016.extension.spi.factory.SpringExtensionFactory
