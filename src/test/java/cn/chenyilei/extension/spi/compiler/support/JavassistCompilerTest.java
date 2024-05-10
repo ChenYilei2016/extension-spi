@@ -3,6 +3,7 @@ package cn.chenyilei.extension.spi.compiler.support;
 import cn.chenyilei.extension.spi.kernel.URL;
 import cn.chenyilei.extension.spi.ExtensionLoader;
 import cn.chenyilei.extension.spi.compiler.Compiler;
+import org.apache.commons.lang3.tuple.Pair;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -55,5 +56,12 @@ public class JavassistCompilerTest {
         for (Compiler compiler : activateExtension) {
 
         }
+    }
+
+    @Test
+    public void e(){
+        ExtensionLoader<Compiler> extensionLoader = ExtensionLoader.getExtensionLoader(Compiler.class);
+        Set<Pair<String, Class<?>>> supportedExtensionPairs = extensionLoader.getSupportedExtensionPairs();
+        System.err.println(supportedExtensionPairs);
     }
 }

@@ -14,6 +14,7 @@ import cn.chenyilei.extension.spi.support.ActivateComparator;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.tuple.Pair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -347,6 +348,13 @@ public class ExtensionLoader<T> {
         Map<String, Class<?>> clazzes = getExtensionClasses();
         Collection<Class<?>> values = clazzes.values();
         return Collections.unmodifiableSet(new HashSet<>(values));
+    }
+
+    public Set<Pair<String, Class<?>>> getSupportedExtensionPairs() {
+        Map<String, Class<?>> clazzes = getExtensionClasses();
+        Set<Pair<String, Class<?>>> entries = new HashSet<>();
+        clazzes.forEach((k, v) -> entries.add(Pair.of(k, v)));
+        return entries;
     }
 
 
