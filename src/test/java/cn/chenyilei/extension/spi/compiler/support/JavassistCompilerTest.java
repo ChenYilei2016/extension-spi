@@ -38,10 +38,11 @@ public class JavassistCompilerTest {
         Set<String> supportedExtensions = extensionLoader.getSupportedExtensions();
         System.err.println(supportedExtensions); //[byteBuddy, javassist, jdk]
 
-        Set<Class<Compiler>> supportedExtensionClass = extensionLoader.getSupportedExtensionClass();
+        Set<Class<? extends Compiler>> supportedExtensionClass = extensionLoader.getSupportedExtensionClass();
+        supportedExtensionClass.forEach(aClass -> System.err.println(aClass));
         System.err.println(supportedExtensionClass);
 
-        Set<Pair<String, Class<Compiler>>> supportedExtensionPairs = ExtensionLoader.getExtensionLoader(Compiler.class).getSupportedExtensionPairs();
+        Set<Pair<String, Class<? extends Compiler>>> supportedExtensionPairs = ExtensionLoader.getExtensionLoader(Compiler.class).getSupportedExtensionPairs();
         System.err.println(supportedExtensionPairs);
 
 

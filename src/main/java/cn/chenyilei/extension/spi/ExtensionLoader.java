@@ -344,18 +344,18 @@ public class ExtensionLoader<T> {
         return Collections.unmodifiableSet(new TreeSet<>(clazzes.keySet()));
     }
 
-    public Set<Class<T>> getSupportedExtensionClass() {
+    public Set<Class<? extends T>> getSupportedExtensionClass() {
         Map<String, Class<?>> clazzes = getExtensionClasses();
         Collection<Class<?>> values = clazzes.values();
-        Set<Class<T>> set = new HashSet<>();
-        values.forEach(c -> set.add((Class<T>) c));
-        return (Set<Class<T>>) set;
+        Set<Class<? extends T>> set = new HashSet<>();
+        values.forEach(c -> set.add((Class<? extends T>) c));
+        return set;
     }
 
-    public Set<Pair<String, Class<T>>> getSupportedExtensionPairs() {
+    public Set<Pair<String, Class<? extends T>>> getSupportedExtensionPairs() {
         Map<String, Class<?>> clazzes = getExtensionClasses();
-        Set<Pair<String, Class<T>>> entries = new HashSet<>();
-        clazzes.forEach((k, v) -> entries.add(Pair.of(k, (Class<T>) v)));
+        Set<Pair<String, Class<? extends T>>> entries = new HashSet<>();
+        clazzes.forEach((k, v) -> entries.add(Pair.of(k, (Class<? extends T>) v)));
         return entries;
     }
 
