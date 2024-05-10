@@ -18,22 +18,21 @@ public class JavassistCompilerTest {
 
     @Test
     public void testCode(){
-        System.err.println("1");
-
         Compiler defaultExtension = ExtensionLoader.getExtensionLoader(Compiler.class).getDefaultExtension();
-
-        System.err.println(defaultExtension);
+        assert defaultExtension instanceof JavassistCompiler;
 
         defaultExtension = ExtensionLoader.getExtensionLoader(Compiler.class).getAdaptiveExtension();
+        assert defaultExtension instanceof AdaptiveCompiler;
 
         System.err.println(defaultExtension);
 
+        //true single
         System.err.println(ExtensionLoader.getExtensionLoader(Compiler.class).getDefaultExtension() ==
                 ExtensionLoader.getExtensionLoader(Compiler.class).getDefaultExtension());
     }
 
     @Test
-    public void classList(){
+    public void classList() throws InstantiationException, IllegalAccessException {
         ExtensionLoader<Compiler> extensionLoader = ExtensionLoader.getExtensionLoader(Compiler.class);
         Set<String> supportedExtensions = extensionLoader.getSupportedExtensions();
         System.err.println(supportedExtensions); //[byteBuddy, javassist, jdk]
@@ -46,8 +45,8 @@ public class JavassistCompilerTest {
         System.err.println(supportedExtensionPairs);
 
 
-        Class<Compiler> c = ExtensionLoader.getExtensionLoader(Compiler.class).getDefaultExtensionClass();
-        System.err.println(c);
+        Class<? extends Compiler> c = ExtensionLoader.getExtensionLoader(Compiler.class).getDefaultExtensionClass();
+        System.err.println(c.newInstance());
     }
 
 

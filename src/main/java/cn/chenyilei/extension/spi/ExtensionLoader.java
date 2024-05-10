@@ -381,8 +381,8 @@ public class ExtensionLoader<T> {
         return cachedDefaultName;
     }
 
-    public Class<T> getDefaultExtensionClass() {
-        return (Class<T>) getExtensionClasses().get(cachedDefaultName);
+    public Class<? extends T> getDefaultExtensionClass() {
+        return (Class<? extends T>) getExtensionClasses().get(cachedDefaultName);
     }
 
     /**
