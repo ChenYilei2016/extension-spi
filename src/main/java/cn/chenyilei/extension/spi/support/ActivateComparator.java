@@ -2,7 +2,7 @@ package cn.chenyilei.extension.spi.support;
 
 import cn.chenyilei.extension.spi.Activate;
 import cn.chenyilei.extension.spi.ExtensionLoader;
-import cn.chenyilei.extension.spi.SPI;
+import cn.chenyilei.extension.spi.ExtensionSPI;
 import cn.chenyilei.extension.spi.utils.MyArrayUtils;
 
 import java.util.Arrays;
@@ -71,7 +71,7 @@ public class ActivateComparator implements Comparator<Object> {
         }
 
         for (Class<?> intf : clazz.getInterfaces()) {
-            if (intf.isAnnotationPresent(SPI.class)) {
+            if (intf.isAnnotationPresent(ExtensionSPI.class)) {
                 return intf;
             } else {
                 Class result = findSpi(intf);

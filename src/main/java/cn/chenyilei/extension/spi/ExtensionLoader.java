@@ -75,7 +75,7 @@ public class ExtensionLoader<T> {
     }
 
     private static <T> boolean withExtensionAnnotation(Class<T> type) {
-        return type.isAnnotationPresent(SPI.class);
+        return type.isAnnotationPresent(ExtensionSPI.class);
     }
 
     public static <T> ExtensionLoader<T> getExtensionLoader(Class<T> type) {
@@ -87,7 +87,7 @@ public class ExtensionLoader<T> {
         }
         if (!withExtensionAnnotation(type)) {
             throw new IllegalArgumentException("Extension type (" + type +
-                    ") is not an extension, because it is NOT annotated with @" + SPI.class.getSimpleName() + "!");
+                    ") is not an extension, because it is NOT annotated with @" + ExtensionSPI.class.getSimpleName() + "!");
         }
         ExtensionLoader<T> loader = (ExtensionLoader<T>) EXTENSION_LOADERS.get(type);
         if (loader == null) {
@@ -343,6 +343,12 @@ public class ExtensionLoader<T> {
         return Collections.unmodifiableSet(new TreeSet<>(clazzes.keySet()));
     }
 
+    public Set<Class<?>> getSupportedExtensionClass() {
+        Map<String, Class<?>> clazzes = getExtensionClasses();
+        Collection<Class<?>> values = clazzes.values();
+        return Collections.unmodifiableSet(new HashSet<>(values));
+    }
+
 
     public Set<T> getSupportedExtensionInstances() {
         List<T> instances = new LinkedList<>();
@@ -363,6 +369,10 @@ public class ExtensionLoader<T> {
     public String getDefaultExtensionName() {
         getExtensionClasses();
         return cachedDefaultName;
+    }
+
+    public Class<T> getDefaultExtensionClass() {
+        return (Class<T>) getExtensionClasses().get(cachedDefaultName);
     }
 
     /**
@@ -594,7 +604,7 @@ public class ExtensionLoader<T> {
      * extract and cache default extension name if exists
      */
     private void cacheDefaultExtensionName() {
-        final SPI defaultAnnotation = type.getAnnotation(SPI.class);
+        final ExtensionSPI defaultAnnotation = type.getAnnotation(ExtensionSPI.class);
         if (defaultAnnotation == null) {
             return;
         }

@@ -15,12 +15,12 @@ Unless required by applicable law or agreed to in writing, software
 package cn.chenyilei.extension.spi.compiler;
 
 
-import cn.chenyilei.extension.spi.SPI;
+import cn.chenyilei.extension.spi.ExtensionSPI;
 
 /**
  * Compiler. (SPI, Singleton, ThreadSafe)
  */
-@SPI("javassist")
+@ExtensionSPI("javassist")
 public interface Compiler {
 
     /**

@@ -7,7 +7,7 @@ import java.lang.annotation.*;
  * for examples: <code>@Activate</code> can be used to load certain <code>Filter</code> extension when there are
  * multiple implementations.
  * extensions with the given criteria.
-@see SPI
+@see ExtensionSPI
  * @see ExtensionLoader
  */
 @Documented

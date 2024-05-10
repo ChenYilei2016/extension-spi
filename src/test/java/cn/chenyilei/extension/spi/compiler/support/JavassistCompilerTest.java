@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author chenyilei
@@ -25,6 +26,22 @@ public class JavassistCompilerTest {
         defaultExtension = ExtensionLoader.getExtensionLoader(Compiler.class).getAdaptiveExtension();
 
         System.err.println(defaultExtension);
+
+        System.err.println(ExtensionLoader.getExtensionLoader(Compiler.class).getDefaultExtension() ==
+                ExtensionLoader.getExtensionLoader(Compiler.class).getDefaultExtension());
+    }
+
+    @Test
+    public void classL(){
+        ExtensionLoader<Compiler> extensionLoader = ExtensionLoader.getExtensionLoader(Compiler.class);
+        Set<String> supportedExtensions = extensionLoader.getSupportedExtensions();
+        System.err.println(supportedExtensions); //[byteBuddy, javassist, jdk]
+
+        Set<Class<?>> supportedExtensionClass = extensionLoader.getSupportedExtensionClass();
+        System.err.println(supportedExtensionClass);
+
+        Class<Compiler> c = ExtensionLoader.getExtensionLoader(Compiler.class).getDefaultExtensionClass();
+        System.err.println(c);
     }
 
 

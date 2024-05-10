@@ -3,7 +3,7 @@ package cn.chenyilei.extension.spi;
 /**
  * ExtensionFactory
  */
-@SPI("spi")
+@ExtensionSPI("spi")
 public interface ExtensionFactory {
 
     /**
