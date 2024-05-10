@@ -33,13 +33,17 @@ public class JavassistCompilerTest {
     }
 
     @Test
-    public void classL(){
+    public void classList(){
         ExtensionLoader<Compiler> extensionLoader = ExtensionLoader.getExtensionLoader(Compiler.class);
         Set<String> supportedExtensions = extensionLoader.getSupportedExtensions();
         System.err.println(supportedExtensions); //[byteBuddy, javassist, jdk]
 
-        Set<Class<?>> supportedExtensionClass = extensionLoader.getSupportedExtensionClass();
+        Set<Class<Compiler>> supportedExtensionClass = extensionLoader.getSupportedExtensionClass();
         System.err.println(supportedExtensionClass);
+
+        Set<Pair<String, Class<Compiler>>> supportedExtensionPairs = ExtensionLoader.getExtensionLoader(Compiler.class).getSupportedExtensionPairs();
+        System.err.println(supportedExtensionPairs);
+
 
         Class<Compiler> c = ExtensionLoader.getExtensionLoader(Compiler.class).getDefaultExtensionClass();
         System.err.println(c);
@@ -59,9 +63,8 @@ public class JavassistCompilerTest {
     }
 
     @Test
-    public void e(){
-        ExtensionLoader<Compiler> extensionLoader = ExtensionLoader.getExtensionLoader(Compiler.class);
-        Set<Pair<String, Class<?>>> supportedExtensionPairs = extensionLoader.getSupportedExtensionPairs();
-        System.err.println(supportedExtensionPairs);
+    public void adapter(){
+        Compiler adaptiveExtension = ExtensionLoader.getExtensionLoader(Compiler.class).getAdaptiveExtension();
+        System.err.println(adaptiveExtension);
     }
 }
