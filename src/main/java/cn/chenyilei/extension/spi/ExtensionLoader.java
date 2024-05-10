@@ -165,9 +165,9 @@ public class ExtensionLoader<T> {
 
                 String[] activateGroup, activateValue;
 
-                if (activate instanceof Activate) {
-                    activateGroup = ((Activate) activate).group();
-                    activateValue = ((Activate) activate).value();
+                if (activate instanceof ExtensionActivate) {
+                    activateGroup = ((ExtensionActivate) activate).group();
+                    activateValue = ((ExtensionActivate) activate).value();
                 } else {
                     continue;
                 }
@@ -404,7 +404,7 @@ public class ExtensionLoader<T> {
                     clazz + " can't be interface!");
         }
 
-        if (!clazz.isAnnotationPresent(Adaptive.class)) {
+        if (!clazz.isAnnotationPresent(ExtensionAdaptive.class)) {
             if (StringUtils.isBlank(name)) {
                 throw new IllegalStateException("Extension name is blank (Extension " + type + ")!");
             }
@@ -718,7 +718,7 @@ public class ExtensionLoader<T> {
                     type + ", class line: " + clazz.getName() + "), class "
                     + clazz.getName() + " is not subtype of interface.");
         }
-        if (clazz.isAnnotationPresent(Adaptive.class)) {
+        if (clazz.isAnnotationPresent(ExtensionAdaptive.class)) {
             cacheAdaptiveClass(clazz);
         } else if (isWrapperClass(clazz)) {
             cacheWrapperClass(clazz);
@@ -772,9 +772,9 @@ public class ExtensionLoader<T> {
      * for compatibility, also cache class with old alibaba Activate annotation
      */
     private void cacheActivateClass(Class<?> clazz, String name) {
-        Activate activate = clazz.getAnnotation(Activate.class);
-        if (activate != null) {
-            cachedActivates.put(name, activate);
+        ExtensionActivate extensionActivate = clazz.getAnnotation(ExtensionActivate.class);
+        if (extensionActivate != null) {
+            cachedActivates.put(name, extensionActivate);
         }
     }
 

@@ -1,7 +1,7 @@
 package cn.chenyilei.extension.spi.factory;
 
 
-import cn.chenyilei.extension.spi.Adaptive;
+import cn.chenyilei.extension.spi.ExtensionAdaptive;
 import cn.chenyilei.extension.spi.ExtensionFactory;
 import cn.chenyilei.extension.spi.ExtensionLoader;
 
@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * AdaptiveExtensionFactory
  */
-@Adaptive
+@ExtensionAdaptive
 public class AdaptiveExtensionFactory implements ExtensionFactory {
 
     private final List<ExtensionFactory> factories;

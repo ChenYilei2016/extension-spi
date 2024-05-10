@@ -1,14 +1,14 @@
 package cn.chenyilei.extension.spi.compiler.support;
 
 
-import cn.chenyilei.extension.spi.Adaptive;
+import cn.chenyilei.extension.spi.ExtensionAdaptive;
 import cn.chenyilei.extension.spi.ExtensionLoader;
 import cn.chenyilei.extension.spi.compiler.Compiler;
 
 /**
  * AdaptiveCompiler. (SPI, Singleton, ThreadSafe)
  */
-@Adaptive
+@ExtensionAdaptive
 public class AdaptiveCompiler implements Compiler {
 
     private static volatile String DEFAULT_COMPILER;

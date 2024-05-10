@@ -13,7 +13,7 @@ import java.lang.annotation.*;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE, ElementType.METHOD})
-public @interface Activate {
+public @interface ExtensionActivate {
     /**
      * Activate the current extension when one of the groups matches. The group passed into
      *

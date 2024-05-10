@@ -65,7 +65,7 @@ public class AdaptiveClassCodeGenerator {
      * test if given type has at least one method annotated with <code>Adaptive</code>
      */
     private boolean hasAdaptiveMethod() {
-        return Arrays.stream(type.getMethods()).anyMatch(m -> m.isAnnotationPresent(Adaptive.class));
+        return Arrays.stream(type.getMethods()).anyMatch(m -> m.isAnnotationPresent(ExtensionAdaptive.class));
     }
 
     /**
@@ -183,9 +183,9 @@ public class AdaptiveClassCodeGenerator {
      * generate method content
      */
     private String generateMethodContent(Method method) {
-        Adaptive adaptiveAnnotation = method.getAnnotation(Adaptive.class);
+        ExtensionAdaptive extensionAdaptiveAnnotation = method.getAnnotation(ExtensionAdaptive.class);
         StringBuilder code = new StringBuilder(512);
-        if (adaptiveAnnotation == null) {
+        if (extensionAdaptiveAnnotation == null) {
             return generateUnsupported(method);
         } else {
             int urlTypeIndex = getUrlTypeIndex(method);
@@ -199,7 +199,7 @@ public class AdaptiveClassCodeGenerator {
                 code.append(generateUrlAssignmentIndirectly(method));
             }
 
-            String[] value = getMethodAdaptiveValue(adaptiveAnnotation);
+            String[] value = getMethodAdaptiveValue(extensionAdaptiveAnnotation);
 
             boolean hasInvocation = hasInvocationArgument(method);
 
@@ -311,8 +311,8 @@ public class AdaptiveClassCodeGenerator {
     /**
      * get value of adaptive annotation or if empty return splitted simple name
      */
-    private String[] getMethodAdaptiveValue(Adaptive adaptiveAnnotation) {
-        String[] value = adaptiveAnnotation.value();
+    private String[] getMethodAdaptiveValue(ExtensionAdaptive extensionAdaptiveAnnotation) {
+        String[] value = extensionAdaptiveAnnotation.value();
         // value is not set, use the value generated from class name as the key
         if (value.length == 0) {
             String splitName = MyStrUtils.camelToSplitName(type.getSimpleName(), ".");

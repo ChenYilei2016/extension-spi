@@ -1,6 +1,6 @@
 package cn.chenyilei.extension.spi.support;
 
-import cn.chenyilei.extension.spi.Activate;
+import cn.chenyilei.extension.spi.ExtensionActivate;
 import cn.chenyilei.extension.spi.ExtensionLoader;
 import cn.chenyilei.extension.spi.ExtensionSPI;
 import cn.chenyilei.extension.spi.utils.MyArrayUtils;
@@ -86,11 +86,11 @@ public class ActivateComparator implements Comparator<Object> {
 
     private ActivateInfo parseActivate(Class<?> clazz) {
         ActivateInfo info = new ActivateInfo();
-        if (clazz.isAnnotationPresent(Activate.class)) {
-            Activate activate = clazz.getAnnotation(Activate.class);
-            info.before = activate.before();
-            info.after = activate.after();
-            info.order = activate.order();
+        if (clazz.isAnnotationPresent(ExtensionActivate.class)) {
+            ExtensionActivate extensionActivate = clazz.getAnnotation(ExtensionActivate.class);
+            info.before = extensionActivate.before();
+            info.after = extensionActivate.after();
+            info.order = extensionActivate.order();
         }
         return info;
     }

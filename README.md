@@ -4,8 +4,8 @@
 
 > 抽出dubbo中的spi模块, 精简实用  
 > cn.chenyilei.extension.spi.ExtensionSPI  
-> cn.chenyilei.extension.spi.Adaptive  
-> cn.chenyilei.extension.spi.Activate
+> cn.chenyilei.extension.spi.ExtensionAdaptive
+> cn.chenyilei.extension.spi.ExtensionActivate
 > 
 > resource目录 : /META-INF/extension-spi
 > 
