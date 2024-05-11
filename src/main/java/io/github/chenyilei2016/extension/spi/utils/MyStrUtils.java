@@ -9,7 +9,7 @@ import java.io.PrintWriter;
 
 /**
  * @author chenyilei
- * @date 2023/09/22 16:44
+ * 2023/09/22 16:44
  */
 public class MyStrUtils {
 
@@ -326,10 +326,12 @@ public class MyStrUtils {
      * <p>Strips any of a set of characters from the end of a String.</p>
      *
      * <p>A <code>null</code> input String returns <code>null</code>.
-     * An empty string ("") input returns the empty string.</p>
+     * An empty string ("") input returns the empty string
+     * </p>
      *
      * <p>If the stripChars String is <code>null</code>, whitespace is
-     * stripped as defined by {@link Character#isWhitespace(char)}.</p>
+     * stripped as defined by {@link Character#isWhitespace(char)}
+     * </p>
      *
      * <pre>
      * StringUtils.stripEnd(null, *)          = null
@@ -372,7 +374,8 @@ public class MyStrUtils {
 
     /**
      * <p>Strips whitespace from the start and end of every String in an array.
-     * Whitespace is defined by {@link Character#isWhitespace(char)}.</p>
+     * Whitespace is defined by {@link Character#isWhitespace(char)}
+     * </p>
      *
      * <p>A new array is returned each time, except for length zero.
      * A <code>null</code> array will return <code>null</code>.
@@ -396,7 +399,7 @@ public class MyStrUtils {
     /**
      * <p>Strips any of a set of characters from the start and end of every
      * String in an array.</p>
-     * Whitespace is defined by {@link Character#isWhitespace(char)}.</p>
+     * Whitespace is defined by {@link Character#isWhitespace(char)}
      *
      * <p>A new array is returned each time, except for length zero.
      * A <code>null</code> array will return <code>null</code>.

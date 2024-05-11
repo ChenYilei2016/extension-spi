@@ -64,7 +64,7 @@ public class MyTypeUtils {
     /**
      * <pre>
      * 获取泛型的实际类型
-     * 如果泛型是 List<D> 这种, 继续找到D
+     * 如果泛型是 {@code List<D> } 这种, 继续找到D
      * Type 可能是实际类型, 也可能是TypeVariableImpl
      * </pre>
      *

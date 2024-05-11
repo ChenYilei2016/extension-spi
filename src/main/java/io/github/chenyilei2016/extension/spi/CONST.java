@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 
 /**
  * @author chenyilei
- * @date 2023/09/22 16:18
+ * 2023/09/22 16:18
  */
 public interface CONST {
     Pattern COMMA_SPLIT_PATTERN = Pattern.compile("\\s*[,]+\\s*");

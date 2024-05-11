@@ -7,7 +7,8 @@ import java.util.function.Function;
 
 /**
  * A function from {@code A} to {@code B} with an associated <i>reverse</i> function from {@code B}
- * to {@code A}; used for converting back and forth between <i>different representations of the same
+ * to {@code A}; used for converting back and forth between
+ * different representations of the same
  */
 public abstract class Converter<A, B> implements Function<A, B> {
     private final boolean handleNullAutomatically;

@@ -7,7 +7,14 @@
     <groupId>io.github.chenyilei2016</groupId>
     <artifactId>extension-spi</artifactId>
     <version>1.0.0</version>
+    <packaging>jar</packaging>
 
+    <description>
+        extension-spi 工具包
+    </description>
+
+    <name>extension-spi</name>
+    <url>https://github.com/ChenYilei2016/extension-spi</url>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
@@ -111,7 +118,8 @@
                 <version>0.4.0</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <publishingServerId>central</publishingServerId>
+<!--                    指定你setting里的一个server 仓库账号密码-->
+                    <publishingServerId>ossrh</publishingServerId>
                     <tokenAuth>true</tokenAuth>
                     <autoPublish>false</autoPublish>
                 </configuration>
@@ -152,7 +160,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9.1</version>
+                <version>3.6.3</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>

@@ -2,7 +2,9 @@ package io.github.chenyilei2016.extension.spi.kernel.function;
 
 /**
  * 无参数的函数对象<br>
- * 一个函数接口代表一个一个函数，用于包装一个函数为对象<br>MyCharUtils@param <R> 返回值类型
+ * 一个函数接口代表一个一个函数，用于包装一个函数为对象<br>
+ * MyCharUtils
+ * @param <R> 返回值类型
  * 
  */
 @FunctionalInterface

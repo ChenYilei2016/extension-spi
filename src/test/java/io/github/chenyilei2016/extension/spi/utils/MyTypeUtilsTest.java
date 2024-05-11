@@ -9,16 +9,18 @@ import java.util.Arrays;
 
 /**
  * https://blog.csdn.net/JokerLJG/article/details/129041452
+ *
  * @author chenyilei
- * @date 2023/09/25 15:23
+ * 2023/09/25 15:23
  */
 public class MyTypeUtilsTest {
 
 
     @Test
-    public void toParameterizedType(){
+    public void toParameterizedType() {
 
-        TestGenericType<String> type = new TestGenericType<String>(){};
+        TestGenericType<String> type = new TestGenericType<String>() {
+        };
 
         ParameterizedType parameterizedType = MyTypeUtils.toParameterizedType(type.getClass());
 
@@ -26,7 +28,7 @@ public class MyTypeUtilsTest {
     }
 
     @Test
-    public void getTypeArguments(){
+    public void getTypeArguments() {
         TestGenericType<String> type = new TestGenericType<String>();
         Type typeArgument = MyTypeUtils.getTypeArgument(type.getClass());
 

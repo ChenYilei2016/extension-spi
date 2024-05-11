@@ -50,7 +50,7 @@ public final class MyArrayUtils {
     }
 
     /**
-     * <p>Checks if the array is not null or empty. <p/>
+     * Checks if the array is not null or empty.
      *
      * @param array th array to check
      * @return {@code true} if the array is not null or empty.

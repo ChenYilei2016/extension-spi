@@ -14,7 +14,7 @@ import java.util.function.Predicate;
 
 /**
  * @author chenyilei
- * @date 2023/09/22 17:02
+ * 2023/09/22 17:02
  */
 public class MyClassUtils {
     public static final String CLASS_EXTENSION = ".class";

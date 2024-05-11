@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * @author chenyilei
- * @date 2023/09/25 10:46
+ * 2023/09/25 10:46
  */
 public class TypeReferenceTest {
 

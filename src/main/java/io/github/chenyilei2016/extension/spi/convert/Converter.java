@@ -1,8 +1,9 @@
 package io.github.chenyilei2016.extension.spi.convert;
 
 /**
- * 转换器接口，实现类型转换MyCharUtils@param <T> 转换到的目标类型
- * 
+ * 转换器接口，实现类型转换MyCharUtils
+ * @param <T>
+ * 转换到的目标类型
  */
 public interface Converter<T> {
 

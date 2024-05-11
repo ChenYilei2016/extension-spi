@@ -3,7 +3,7 @@ package io.github.chenyilei2016.extension.spi.utils.tmp;
 
 /**
  * @author chenyilei
- * @date 2023/09/25 15:24
+ * 2023/09/25 15:24
  */
 public class TestGenericType<T> {
     private T data;
