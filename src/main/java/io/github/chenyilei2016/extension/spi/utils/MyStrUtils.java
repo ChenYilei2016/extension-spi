@@ -1,8 +1,8 @@
 package io.github.chenyilei2016.extension.spi.utils;
 
 
-import io.github.chenyilei2016.extension.spi.io.UnsafeStringWriter;
 import com.alibaba.fastjson.JSON;
+import io.github.chenyilei2016.extension.spi.io.UnsafeStringWriter;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.PrintWriter;
@@ -237,8 +237,6 @@ public class MyStrUtils {
     }
 
 
-
-
     /**
      * 除去字符串头尾部的空白，如果字符串是<code>null</code>，依然返回<code>null</code>。
      *
@@ -322,7 +320,6 @@ public class MyStrUtils {
         String ts = trim(str);
         return isEmpty(ts) ? null : ts;
     }
-
 
 
     /**
