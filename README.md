@@ -1,4 +1,13 @@
-
+## 版本
+```xml
+<dependencies>
+    <dependency>
+        <groupId>io.github.chenyilei2016</groupId>
+        <artifactId>extension-spi</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+</dependencies>
+```
 
 ## SPI 工具包
 
